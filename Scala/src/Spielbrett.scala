@@ -7,7 +7,7 @@ class Spielbrett {
 	// eine Spalte besteht aus 3x "spalte" von Feld
 	
 
-	val spielbrett = Array[Array[Spielfeld]](Array[Spielfeld](new Spielfeld(),new Spielfeld(),new Spielfeld()), Array[Spielfeld](new Spielfeld(),new Spielfeld(),new Spielfeld()), Array[Spielfeld](new Spielfeld(),new Spielfeld(),new Spielfeld()));
+	var spielbrett = Array[Array[Spielfeld]](Array[Spielfeld](new Spielfeld(),new Spielfeld(),new Spielfeld()), Array[Spielfeld](new Spielfeld(),new Spielfeld(),new Spielfeld()), Array[Spielfeld](new Spielfeld(),new Spielfeld(),new Spielfeld()));
 
 	//Methode: Zeile
 	
@@ -38,8 +38,25 @@ class Spielbrett {
 	  
 	}
 	
-	/*Methode: x/y - Struktur
-	 * Methode: Sudoku einpflegen*/
+	
+	// Methode: x/y - Struktur
+	def koor(x:Int, y:Int, zahl:Int):Unit={
+		(spielbrett((y-1)/3)((x-1)/3)).feld((x-1)%3)((y-1)%3) = zahl;
+	}
+	
+	
+	def init(arr:Array[Array[Int]]):Unit={
+	 for (i <- 0 to 8){
+	   for (j <- 0 to 8){
+		   koor(i+1,j+1,arr(i)(j));
+	   }
+	 }
+	}
+	
+	
+	
+	
+	
 	
 	
 }
