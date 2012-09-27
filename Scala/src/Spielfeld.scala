@@ -1,6 +1,6 @@
 class Spielfeld  {
 
-	val feld = Array (Array(0,0,0),Array(0,0,0),Array(0,0,0))
+	val feld = Array (Array(1,2,3),Array(4,5,6),Array(7,8,9))
 
 	//Eine Zeile sei: 
 	//- alle 3 Werte einer Zeile (n)

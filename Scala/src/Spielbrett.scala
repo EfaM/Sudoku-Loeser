@@ -22,4 +22,24 @@ class Spielbrett {
 		}
 		return zeile;
 	}
+	
+	//Methode: Spalte
+	
+	def spalte (m:Int):Array[Int]={
+	  val spalte = new Array[Int](9);
+	  var count = 0;
+	  for (i <- 0 to 2){
+		  for (j <- 0 to 2){
+			  spalte (count) = ((spielbrett ((m-1)/3)(i)).spalte((m-1)%3))(j);
+			  count = count + 1;
+		  }
+	  }
+	  return spalte;
+	  
+	}
+	
+	/*Methode: x/y - Struktur
+	 * Methode: Sudoku einpflegen*/
+	
+	
 }
